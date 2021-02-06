@@ -1,0 +1,89 @@
+{
+  "name": "@refrens/stylelint-config-refrens",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Refrens",
+  "license": "UNLICENCED",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@refrens/eslint-config": "^1.1.8",
+    "@release-it/conventional-changelog": "^2.0.0",
+    "commitiquette": "^1.0.9",
+    "commitizen": "^4.2.3",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "post-merge-install": "^0.4.0",
+    "prettier": "^2.2.1",
+    "release-it": "^14.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "post-merge-install",
+      "post-rebase": "post-merge-install",
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,mjs}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "**/*.{json,css,html,md,sass,scss,vue,yaml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "lint": "run-s lint:js lint:prettier:check",
+    "lint:fix": "run-s lint:js:fix lint:prettier:fix",
+    "lint:prettier:check": "prettier --check \"**/*.{css,html,js,json,jsx,md,sass,scss,ts,tsx,vue,yaml,yml}\"",
+    "lint:prettier:fix": "prettier --write \"**/*.{css,html,js,json,jsx,md,sass,scss,ts,tsx,vue,yaml,yml}\"",
+    "lint:js": "run-s lint:js:prettier lint:js:eslint",
+    "lint:js:prettier": "prettier --check \"**/*.{json,js,ts,tsx,mjs}\"",
+    "lint:js:eslint": "eslint \"**/*.{js,ts,tsx,mjs}\"",
+    "lint:js:fix": "run-s lint:js:fix:prettier lint:js:fix:eslint",
+    "lint:js:fix:eslint": "npm run lint:js:eslint -- --fix",
+    "lint:js:fix:prettier": "prettier --write \"**/*.{json,js,ts,tsx,mjs}\"",
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:reset": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "prerelease": "run-s lint test",
+    "release-it": "release-it",
+    "release": "run-s \"release-it -- --ci --git.requireBranch=master {1}\" --",
+    "release:canary": "run-s \"release-it -- {2} --preRelease={1} --ci\" -- "
+  },
+  "config": {
+    "commitizen": {
+      "path": "commitiquette"
+    }
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): v${version}",
+      "requireBranch": false
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  },
+  "dependencies": {
+    "stylelint-config-recommended": "^3.0.0"
+  }
+}
