@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/refrens/stylelint-config-refrens/compare/0.2.2...0.2.3) (2021-02-07)
+
+
+### Bug Fixes
+
+* double string quotes ([6c365dc](https://github.com/refrens/stylelint-config-refrens/commit/6c365dc240385c985da5679b82838e1542f593ae))
+
 ## [0.2.2](https://github.com/refrens/stylelint-config-refrens/compare/0.2.1...0.2.2) (2021-02-07)
 
 
