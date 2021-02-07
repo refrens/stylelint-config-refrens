@@ -22,7 +22,7 @@ module.exports = {
     'function-comma-space-before': 'never',
     'number-leading-zero': 'always',
     'number-no-trailing-zeros': true,
-    'string-quotes': 'single',
+    'string-quotes': 'double',
     'unit-case': 'lower',
     'value-keyword-case': 'lower',
     'property-case': 'lower',
