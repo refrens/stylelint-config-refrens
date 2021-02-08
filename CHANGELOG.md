@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/refrens/stylelint-config-refrens/compare/0.2.3...0.2.4) (2021-02-08)
+
+
+### Bug Fixes
+
+* units allowed -> deg ([3353fb8](https://github.com/refrens/stylelint-config-refrens/commit/3353fb832c0dd0d0ba992b7a58556b32bc26badc))
+
 ## [0.2.3](https://github.com/refrens/stylelint-config-refrens/compare/0.2.2...0.2.3) (2021-02-07)
 
 
