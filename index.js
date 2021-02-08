@@ -11,7 +11,7 @@ module.exports = {
     'color-no-hex': true,
     'font-weight-notation': 'numeric',
     'number-max-precision': 3,
-    'unit-allowed-list': ['px', '%', 'rem', 's', 'vw'],
+    'unit-allowed-list': ['px', '%', 'rem', 's', 'vw', 'deg'],
     'value-no-vendor-prefix': true,
     'declaration-block-no-redundant-longhand-properties': true,
     'declaration-block-single-line-max-declarations': 1,
