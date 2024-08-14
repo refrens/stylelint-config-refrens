@@ -1,3 +1,10 @@
+## [0.2.5-test.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.4...0.2.5-test.0) (2024-08-14)
+
+
+### Bug Fixes
+
+* minor fix ([9535f27](https://github.com/refrens/stylelint-config-refrens/commit/9535f27879ade8a04fbb23307414ee872250f892))
+
 ## [0.2.4](https://github.com/refrens/stylelint-config-refrens/compare/0.2.3...0.2.4) (2021-02-08)
 
 
