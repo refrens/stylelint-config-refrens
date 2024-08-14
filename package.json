@@ -1,5 +1,5 @@
 {
-  "name": "@refrens/stylelint-omens",
+  "name": "@refrens/stylelint-config-refrens",
   "version": "0.2.4",
   "main": "index.js",
   "author": "Refrens",
