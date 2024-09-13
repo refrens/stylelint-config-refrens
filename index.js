@@ -1,5 +1,5 @@
 module.exports = {
-  customSyntax: '@stylelint/postcss-css-in-js',
+  customSyntax: 'postcss-styled-syntax',
   plugins: ['./custom-rules/hex-rule.js'],
   rules: {
     '@refrens/stylelint-custom-hex-rule': true,
