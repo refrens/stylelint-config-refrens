@@ -5,11 +5,13 @@
   "author": "Refrens",
   "license": "UNLICENCED",
   "dependencies": {
+    "stylelint": "^16.14.1",
     "postcss-value-parser": "^4.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@refrens/eslint-config": "^2.6.0",
     "@release-it/conventional-changelog": "^2.0.0",
     "commitiquette": "^1.0.9",
     "commitizen": "^4.2.3",
@@ -32,7 +34,7 @@
     "postcss-value-parser": "^4.2.0",
     "prettier": "^2.2.1",
     "release-it": "^14.6.2",
-    "stylelint": "^14.16.1"
+    "stylelint": "^16.14.1"
   },
   "husky": {
     "hooks": {

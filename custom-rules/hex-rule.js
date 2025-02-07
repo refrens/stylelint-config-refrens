@@ -3,7 +3,7 @@ const valueParser = require('postcss-value-parser');
 
 const ruleName = '@refrens/stylelint-custom-hex-rule';
 const messages = stylelint.utils.ruleMessages(ruleName, {
-  found: (color) => `Hex color "${color}" found in styled-component CSS`,
+  found: (color) => `"${color}" found use variable from @refrens/disco istead of hex color`,
 });
 
 module.exports = stylelint.createPlugin(ruleName, (primaryOption) => {
