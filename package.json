@@ -5,13 +5,11 @@
   "author": "Refrens",
   "license": "UNLICENCED",
   "dependencies": {
-    "stylelint": "^14.16.1",
     "postcss-value-parser": "^4.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@refrens/eslint-config": "^1.1.8",
     "@release-it/conventional-changelog": "^2.0.0",
     "commitiquette": "^1.0.9",
     "commitizen": "^4.2.3",
