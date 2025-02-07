@@ -1,3 +1,5 @@
+## [0.2.8-REF-681-node-diff.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.8-REF-681-node-20.0...0.2.8-REF-681-node-diff.0) (2025-02-07)
+
 ## [0.2.8-REF-681-node-20.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.8-REF-681-new.0...0.2.8-REF-681-node-20.0) (2025-02-07)
 
 ## [0.2.8-REF-681-new.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.4...0.2.8-REF-681-new.0) (2024-09-13)
