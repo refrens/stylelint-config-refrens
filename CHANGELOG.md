@@ -1,3 +1,7 @@
+* Merge pull request #3 from refrens/REF-681 (b320741)
+* fix: fixes message (a6be53d)
+* Merge pull request #2 from refrens/REF-681 (64b2eb7)
+
 ## [0.2.8-REF-681-node-diff.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.8-REF-681-node-20.0...0.2.8-REF-681-node-diff.0) (2025-02-07)
 
 ## [0.2.8-REF-681-node-20.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.8-REF-681-new.0...0.2.8-REF-681-node-20.0) (2025-02-07)
