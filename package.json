@@ -1,13 +1,17 @@
 {
   "name": "@refrens/stylelint-config-refrens",
-  "version": "0.2.4",
+  "version": "0.2.8-REF-681-node-diff.0",
   "main": "index.js",
   "author": "Refrens",
   "license": "UNLICENCED",
+  "dependencies": {
+    "stylelint": "^16.14.1",
+    "postcss-value-parser": "^4.2.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@refrens/eslint-config": "^1.1.8",
+    "@refrens/eslint-config": "^2.6.0",
     "@release-it/conventional-changelog": "^2.0.0",
     "commitiquette": "^1.0.9",
     "commitizen": "^4.2.3",
@@ -24,8 +28,13 @@
     "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
     "post-merge-install": "^0.4.0",
+    "postcss": "^8.4.41",
+    "postcss-styled-syntax": "^0.6.4",
+    "postcss-syntax": "^0.36.2",
+    "postcss-value-parser": "^4.2.0",
     "prettier": "^2.2.1",
-    "release-it": "^14.3.0"
+    "release-it": "^14.6.2",
+    "stylelint": "^16.14.1"
   },
   "husky": {
     "hooks": {
@@ -82,8 +91,5 @@
         "infile": "CHANGELOG.md"
       }
     }
-  },
-  "dependencies": {
-    "stylelint-config-recommended": "^3.0.0"
   }
 }
