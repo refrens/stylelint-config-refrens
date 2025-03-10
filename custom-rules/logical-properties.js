@@ -7,7 +7,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 });
 
 const meta = {
-  fixable: 'code',
+  fixable: true,
 };
 
 /**
