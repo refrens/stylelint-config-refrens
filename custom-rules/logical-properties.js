@@ -3,119 +3,106 @@ const stylelint = require('stylelint');
 const ruleName = '@refrens/stylelint-logical-properties';
 const messages = stylelint.utils.ruleMessages(ruleName, {
   rejected: (prop, newProp) =>
-    `Unexpected physical property '${prop}'. Use '${newProp}' instead for RTL/LTR support.`,
+    `Unexpected physical property '${prop}'. Use '${newProp}' instead for better RTL/LTR support.`,
 });
 
 const meta = {
-  fixable: true,
+  fixable: 'code',
+  docs: {
+    description: 'Enforces logical properties for better RTL/LTR support.',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties',
+  },
 };
 
 /**
- *
- * @param direction
+ * Converts physical directions (top, right, bottom, left) to logical equivalents.
+ * @param {string} direction
+ * @returns {string|null}
  */
 function getLogicalDirection(direction) {
-  switch (direction) {
-    case 'top':
-      return 'block-start';
-    case 'bottom':
-      return 'block-end';
-    case 'left':
-      return 'inline-start';
-    case 'right':
-      return 'inline-end';
-    default:
-      return null;
-  }
+  const map = {
+    top: 'block-start',
+    bottom: 'block-end',
+    left: 'inline-start',
+    right: 'inline-end',
+  };
+  return map[direction] || null;
 }
 
 /**
- *
- * @param direction
+ * Converts block-based border-radius directions.
+ * @param {string} direction
+ * @returns {string}
  */
 function getBlockLogical(direction) {
   return direction === 'top' ? 'start' : 'end';
 }
 
 /**
- *
- * @param direction
+ * Converts inline-based border-radius directions.
+ * @param {string} direction
+ * @returns {string}
  */
 function getInlineLogical(direction) {
   return direction === 'left' ? 'start' : 'end';
 }
 
-/**
- *
- * @param decl
- * @param newProp
- * @param result
- */
-function reportError(decl, newProp, result) {
-  stylelint.utils.report({
-    message: messages.rejected(decl.prop, newProp),
-    node: decl,
-    result,
-    ruleName,
-    fix: (fixer) => {
-      return fixer.replaceText(
-        decl,
-        `${newProp}: ${decl.value}${decl.important ? ' !important' : ''};`,
-      );
-    },
-  });
-}
+module.exports = stylelint.createPlugin(
+  ruleName,
+  (primaryOption, secondaryOptions, context) => {
+    return (root, result) => {
+      const validOptions = stylelint.utils.validateOptions(result, ruleName, {});
 
-module.exports = stylelint.createPlugin(ruleName, () => {
-  return (root, result) => {
-    const validOptions = stylelint.utils.validateOptions(result, ruleName, {});
+      if (!validOptions) return;
 
-    if (!validOptions) return;
+      root.walkDecls((decl) => {
+        const { prop } = decl;
+        let newProp = null;
 
-    root.walkDecls((decl) => {
-      const { prop: declProp } = decl;
-      const prop = declProp;
-      let newProp;
-
-      // Handle padding and margin properties
-      if (prop.startsWith('padding-') || prop.startsWith('margin-')) {
-        const parts = prop.split('-');
-        const direction = parts[1];
-        const logical = getLogicalDirection(direction);
-        if (logical) {
-          newProp = `${parts[0]}-${logical}`;
+        // Handle padding and margin properties
+        if (prop.startsWith('padding-') || prop.startsWith('margin-')) {
+          const parts = prop.split('-');
+          const logical = getLogicalDirection(parts[1]);
+          if (logical) {
+            newProp = `${parts[0]}-${logical}`;
+          }
         }
-      }
 
-      // Handle border properties (excluding radius)
-      else if (prop.startsWith('border-') && !prop.includes('radius')) {
-        const parts = prop.split('-');
-        const direction = parts[1];
-        if (['top', 'bottom', 'left', 'right'].includes(direction)) {
-          const logical = getLogicalDirection(direction);
+        // Handle border properties (excluding radius)
+        else if (prop.startsWith('border-') && !prop.includes('radius')) {
+          const parts = prop.split('-');
+          const logical = getLogicalDirection(parts[1]);
           if (logical) {
             parts[1] = logical;
             newProp = parts.join('-');
           }
         }
-      }
 
-      // Handle border-radius properties
-      else if (prop.startsWith('border-') && prop.endsWith('-radius')) {
-        const matches = prop.match(/^border-(top|bottom)-(left|right)-radius$/);
-        if (matches) {
-          const [blockDir, inlineDir] = matches.slice(1);
-          newProp = `border-${getBlockLogical(blockDir)}-${getInlineLogical(inlineDir)}-radius`;
+        // Handle border-radius properties
+        else if (prop.startsWith('border-') && prop.endsWith('-radius')) {
+          const matches = prop.match(/^border-(top|bottom)-(left|right)-radius$/);
+          if (matches) {
+            const [blockDir, inlineDir] = matches.slice(1);
+            newProp = `border-${getBlockLogical(blockDir)}-${getInlineLogical(inlineDir)}-radius`;
+          }
         }
-      }
 
-      if (newProp) {
-        reportError(decl, newProp, result);
-      }
-    });
-  };
-});
-
-module.exports.ruleName = ruleName;
-module.exports.messages = messages;
-module.exports.meta = meta;
+        if (newProp) {
+          if (context.fix) {
+            // Autofix: Modify the AST directly
+            decl.prop = newProp;
+          } else {
+            // Report an error without modifying the AST
+            stylelint.utils.report({
+              message: messages.rejected(prop, newProp),
+              node: decl,
+              result,
+              ruleName,
+            });
+          }
+        }
+      });
+    };
+  },
+  { ruleName, messages, meta },
+);
