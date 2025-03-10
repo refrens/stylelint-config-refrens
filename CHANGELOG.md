@@ -1,3 +1,10 @@
+## [0.2.9-REF-8342-final.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342-minor-fix.0...0.2.9-REF-8342-final.0) (2025-03-10)
+
+
+### Bug Fixes
+
+* fixes ([4a98e3c](https://github.com/refrens/stylelint-config-refrens/commit/4a98e3cb0cfa75ca6954736618bc732bfb55d4e5))
+
 ## [0.2.9-REF-8342-minor-fix.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342-fix.0...0.2.9-REF-8342-minor-fix.0) (2025-03-10)
 
 
