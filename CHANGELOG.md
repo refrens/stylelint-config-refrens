@@ -1,3 +1,10 @@
+## [0.2.9-REF-8342-meta-fixable.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342.0...0.2.9-REF-8342-meta-fixable.0) (2025-03-10)
+
+
+### Bug Fixes
+
+* meta fixable ([ce26669](https://github.com/refrens/stylelint-config-refrens/commit/ce266696cb6fef661bc2f8008cf4f86a22da9cf6))
+
 ## [0.2.9-REF-8342.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.8...0.2.9-REF-8342.0) (2025-03-10)
 
 * Merge pull request #3 from refrens/REF-681 (b320741)
