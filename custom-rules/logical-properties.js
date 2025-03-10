@@ -6,6 +6,10 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
     `Unexpected physical property '${prop}'. Use '${newProp}' instead for RTL/LTR support.`,
 });
 
+const meta = {
+  fixable: 'code',
+};
+
 /**
  *
  * @param direction
@@ -114,3 +118,4 @@ module.exports = stylelint.createPlugin(ruleName, () => {
 
 module.exports.ruleName = ruleName;
 module.exports.messages = messages;
+module.exports.meta = meta;

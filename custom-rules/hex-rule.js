@@ -6,10 +6,6 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
   found: (color) => `"${color}" found illegal color use. Use variable from @refrens/disco instead.`,
 });
 
-const meta = {
-  fixable: 'code',
-};
-
 module.exports = stylelint.createPlugin(ruleName, (primaryOption) => {
   return (root, result) => {
     const validOptions = stylelint.utils.validateOptions(result, ruleName, {
@@ -61,4 +57,3 @@ module.exports = stylelint.createPlugin(ruleName, (primaryOption) => {
 
 module.exports.ruleName = ruleName;
 module.exports.messages = messages;
-module.exports.meta = meta;
