@@ -3,7 +3,7 @@ module.exports = {
   plugins: ['./custom-rules/hex-rule.js', './custom-rules/logical-properties.js'],
   rules: {
     '@refrens/stylelint-custom-hex-rule': true,
-    '@refrens/stylelint-logical-properties': true,
+    '@refrens/stylelint-logical-properties': false,
     'color-named': 'never',
     'color-hex-length': 'long',
     'color-no-hex': true,
