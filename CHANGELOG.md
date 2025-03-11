@@ -1,3 +1,10 @@
+## [0.2.9-REF-8342-defaults.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342-final.0...0.2.9-REF-8342-defaults.0) (2025-03-11)
+
+
+### Bug Fixes
+
+* default off ([3a7eb49](https://github.com/refrens/stylelint-config-refrens/commit/3a7eb49d03aa06c63dc69c133b6850cc251c5a9e))
+
 ## [0.2.9-REF-8342-final.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342-minor-fix.0...0.2.9-REF-8342-final.0) (2025-03-10)
 
 
