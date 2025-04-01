@@ -1,6 +1,6 @@
 {
   "name": "@refrens/stylelint-config-refrens",
-  "version": "0.2.9-REF-8342-defaults.0",
+  "version": "0.2.8",
   "main": "index.js",
   "author": "Refrens",
   "license": "UNLICENCED",
