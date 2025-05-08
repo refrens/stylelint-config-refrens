@@ -1,3 +1,5 @@
+## [0.2.11-REF-7455.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.10...0.2.11-REF-7455.0) (2025-05-08)
+
 ## [0.2.10](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342-defaults.0...0.2.10) (2025-04-01)
 
 * Merge pull request #3 from refrens/REF-681 (b320741)
