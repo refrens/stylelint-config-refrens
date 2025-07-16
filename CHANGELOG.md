@@ -1,3 +1,10 @@
+## [0.2.11-REF-8876.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.11-REF-7455.0...0.2.11-REF-8876.0) (2025-07-16)
+
+
+### Bug Fixes
+
+* disables letter spacing and line height rule ([91b1640](https://github.com/refrens/stylelint-config-refrens/commit/91b1640e3fb21bc6c28d50359e8ccc572c782133))
+
 ## [0.2.11-REF-7455.0](https://github.com/refrens/stylelint-config-refrens/compare/0.2.10...0.2.11-REF-7455.0) (2025-05-08)
 
 ## [0.2.10](https://github.com/refrens/stylelint-config-refrens/compare/0.2.9-REF-8342-defaults.0...0.2.10) (2025-04-01)
