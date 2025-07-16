@@ -9,6 +9,6 @@ module.exports = {
     'color-no-hex': true,
     'color-no-invalid-hex': true,
     'function-disallowed-list': ['rgb', 'hwb', 'lch', 'hsl', 'rgba', 'hsla'],
-    'property-disallowed-list': ['font-size'],
+    'property-disallowed-list': ['font-size', 'line-height', 'letter-spacing'],
   },
 };
